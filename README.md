@@ -7,6 +7,8 @@ rtcsignalr
 使用方法
 
 创建会话房间
+
+
             var localStream;
             $(document).ready(function () {
 
@@ -29,6 +31,8 @@ rtcsignalr
             }
 
 加入会话房间
+
+
             var webRtc;
             function call() {
                 webRtc = WebRTC.joinRoom($('#userName').val(), $('#roomName').val(), gotRemoteStream1);
