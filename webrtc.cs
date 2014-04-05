@@ -10,12 +10,6 @@ using System.Web;
 /// </summary>
 public class WebRTC : Hub
 {
-    public void Send(string UserName, string Message)
-    {
-        Clients.All.sendMessage(UserName, Message);      // 所有连接
-        //Clients.Caller.sendMessage(UserName, Message);  // 当前连接
-        //Clients.Others.sendMessage(UserName, Message); //当前连接以外的客户端
-    }
     /// <summary>
     /// 请求服务器连接
     /// </summary>
