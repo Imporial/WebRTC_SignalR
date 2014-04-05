@@ -22,7 +22,7 @@ public class WebRTC : Hub
     /// <param name="serverId"></param>
     public void RequestConnection(string serverId, string clientId)
     {
-        Clients.Client(serverId).startConnection(clientId);
+        Clients.Client(serverId).onRequestConnection(clientId);
     }
     /// <summary>
     /// 注册某端作为服务器
@@ -71,9 +71,9 @@ public class WebRTC : Hub
     /// </summary>
     /// <param name="serverId"></param>
     /// <param name="desc"></param>
-    public void SetServerRemoteDescription(string serverId, object desc)
+    public void SetServerRemoteDescription(string serverId, string clientId, object desc)
     {
-        Clients.Client(serverId).onSetServerRemoteDescription(desc);
+        Clients.Client(serverId).onSetServerRemoteDescription(clientId, desc);
     }
     /// <summary>
     /// 请求客户端候选执行
@@ -87,9 +87,9 @@ public class WebRTC : Hub
     /// <summary>
     /// 请求服务器候选执行
     /// </summary>
-    public void RequestServerCandidate(string serverId, object e)
+    public void RequestServerCandidate(string serverId, string clientId, object e)
     {
-        Clients.Client(serverId).onRequestServerCandidate(e);
+        Clients.Client(serverId).onRequestServerCandidate(clientId, e);
     }
 
     public void ClientIceCandidateSet(string clientId)
