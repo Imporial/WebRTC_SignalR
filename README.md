@@ -20,7 +20,7 @@ rtcsignalr
 
             function start() {
 
-                var webRtc = WebRTC.createRoom($('#roomName').val(), localStream, function () { })
+                var webRtc = WebRTC.createRoom(房间名, localStream, function () { })
             }
 
             function gotStream(stream) {
@@ -35,7 +35,7 @@ rtcsignalr
 
             var webRtc;
             function call() {
-                webRtc = WebRTC.joinRoom($('#userName').val(), $('#roomName').val(), gotRemoteStream1);
+                webRtc = WebRTC.joinRoom(用户名, 房间名, gotRemoteStream1);
             }
 
             function gotRemoteStream1(e) {
