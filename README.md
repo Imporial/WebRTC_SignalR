@@ -11,22 +11,16 @@ rtcsignalr
 
             var localStream;
             $(document).ready(function () {
-
-                trace("请求本地多媒体流");
-                // Call into getUserMedia via the polyfill (adapter.js).
                 getUserMedia({ audio: false, video: true },
                               gotStream, function () { });
             })
 
             function start() {
-
                 var webRtc = WebRTC.createRoom(房间名, localStream, function () { })
             }
 
             function gotStream(stream) {
-                trace("收到本地多媒体流");
-                // Call the polyfill wrapper to attach the media stream to this element.
-                attachMediaStream($('#local')[0], stream);
+                attachMediaStream(显示元素, stream);
                 localStream = stream;
             }
 
@@ -39,7 +33,5 @@ rtcsignalr
             }
 
             function gotRemoteStream1(e) {
-                // Call the polyfill wrapper to attach the media stream to this element.
-                attachMediaStream($('#remote')[0], e.stream);
-                trace("客户端已收到远程视频流");
+                attachMediaStream(显示元素, e.stream);
             }
