@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// WebRTC 的摘要说明
+/// WebRTC 的信令服务转发接口
 /// </summary>
 public class WebRTC : Hub
 {
